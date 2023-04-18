@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 export const SideBarContainer = styled.div`
-  position: absolute;
   width: 15rem;
-  left: 0px;
-  top: 0px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top:3rem;
+  margin-right: 0;
 `;
 
 export const Logo = styled.img`
@@ -16,7 +13,9 @@ export const Logo = styled.img`
   height: 2.5rem;
 `;
 
-export const SideBarItems = styled.div``;
+export const SideBarItems = styled.div`
+  margin-top: 1rem;
+`;
 
 export const SideBarItem = styled.div`
   padding: 0.4rem;

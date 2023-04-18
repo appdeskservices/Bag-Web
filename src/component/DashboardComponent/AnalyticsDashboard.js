@@ -35,13 +35,34 @@ export default function AnalyticsDashboard() {
       "10th",
       "11th",
       "12th",
+      "13th",
+      "14th",
+      "15th",
+      "16th",
+      "17th",
+      "18th",
+      "19th",
+      "20th",
+      "21st",
+      "22nd",
+      "23rd",
+      "24th",
+      "25th",
+      "26th",
+      "27th",
+      "28th",
+      "29th",
+      "30th",
     ],
     datasets: [
       {
         label: "Sales Per Month",
-        data: [4,5,3.5,8,2,4,4,5,4,6,7,4,5],
+        data: [
+          4, 5, 3.5, 8, 2, 4, 4, 5, 4, 6, 7, 4, 5, 2, 4, 4, 5, 4, 6, 7, 4, 5, 4,
+          5, 4, 6, 7,
+        ],
         backgroundColor: ["#347AE2"],
-        borderWidth: 0,
+        borderWidth: 1,
       },
     ],
   };
@@ -115,8 +136,19 @@ export default function AnalyticsDashboard() {
       </OrdersInfoContainer>
       <ChartContainer>
         <Bar
+          style={{ width: "90%" }}
           data={data}
           options={{
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                min: 0,
+                max: 12,
+                stepSize: 2,
+              },
+              x: {},
+            },
+            responsive: true,
             plugins: {
               title: {
                 display: true,

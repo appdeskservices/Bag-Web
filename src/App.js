@@ -1,14 +1,10 @@
 import React from "react";
-import SideBar from "./component/SideBar";
-import TopBar from "./component/TopBar";
-import Dashboard from "./component/DashboardComponent";
+import DashboardPage from "./pages/Dashboard";
 
 function App() {
   return (
     <div>
-      <SideBar />
-      <TopBar />
-      <Dashboard />
+      <DashboardPage />
     </div>
   );
 }

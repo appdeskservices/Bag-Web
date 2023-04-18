@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
 export const TopBarContainer = styled.div`
-  position: absolute;
-  width: 1000px;
-  left: 241px;
   padding: 0rem 1rem;
   border-bottom: 2px solid #e5e7eb;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width:95%;
 `;
 
 export const GlobalSearchInput = styled.input`
