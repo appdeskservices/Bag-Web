@@ -124,6 +124,7 @@ export const FilterButton = styled.div`
   border-radius: 8px;
   width: 80px;
   height: 32px;
+  cursor: pointer;
 `;
 
 export const FilterComponent = styled.div`

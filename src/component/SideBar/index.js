@@ -8,7 +8,7 @@ import {
 import { LogoImage } from "../../assests";
 import { RiHomeLine } from "react-icons/ri";
 import { FiShoppingCart } from "react-icons/fi";
-export default function SideBar() {
+export default function SideBar({ selectedPage }) {
   const [selected, setSelected] = useState("Dashboard");
   const SideBarItemsList = [
     { id: 1, title: "Dashboard", icon: <RiHomeLine size={18} /> },
@@ -21,7 +21,10 @@ export default function SideBar() {
         {SideBarItemsList.map((val) => {
           return (
             <SideBarItem
-              onClick={() => setSelected(val.title)}
+              onClick={() => {
+                setSelected(val.title);
+                selectedPage(val.title);
+              }}
               key={val.id}
               isActive={selected === val.title}
             >

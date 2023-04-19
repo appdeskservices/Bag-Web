@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TopBar from "../../component/TopBar";
 import SideBar from "../../component/SideBar";
 import Dashboard from "../../component/DashboardComponent";
@@ -8,18 +8,26 @@ import {
   SideBarContainer,
   TopBarContainer,
 } from "./PageStyling";
+import OrdersComponent from "../../component/OrdersComponent/OrdersComponent";
 
 export default function DashboardPage() {
+  const [currentPage, SetCurrentPage] = useState("Dashboard");
   return (
     <PageContainer>
       <SideBarContainer>
-        <SideBar />
+        <SideBar selectedPage={SetCurrentPage} />
       </SideBarContainer>
       <TopBarContainer>
         <TopBar />
       </TopBarContainer>
       <ComponentContainer>
-        <Dashboard />
+        {currentPage === "Dashboard" ? (
+          <Dashboard />
+        ) : currentPage === "Orders" ? (
+          <OrdersComponent />
+        ) : (
+          <></>
+        )}
       </ComponentContainer>
     </PageContainer>
   );
