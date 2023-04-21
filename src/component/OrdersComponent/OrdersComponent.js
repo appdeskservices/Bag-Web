@@ -37,9 +37,11 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import OutsideClickHandler from "react-outside-click-handler";
+import { useNavigate } from "react-router-dom";
 
 export default function OrdersComponent() {
   const [showFilters, setShowFilters] = useState(false);
+  const navigate = useNavigate();
   function createData(order, date, customer, status, salesChannel, total) {
     return { order, date, customer, status, salesChannel, total };
   }
@@ -118,7 +120,6 @@ export default function OrdersComponent() {
       <TableTopFiltersContainer>
         <div style={{ display: "flex", gap: "0.2rem" }}>
           <div>
-            {console.log(showFilters)}
             <FilterButton onClick={() => setShowFilters(!showFilters)}>
               <MdTune size={20} color="#111827" />
               Filters
@@ -189,6 +190,8 @@ export default function OrdersComponent() {
                 <TableRow
                   key={row.order}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  onClick={() => navigate("/id")}
+                  style={{ cursor: "pointer" }}
                 >
                   <TableCell component="th" scope="row" style={rowStyle}>
                     {row.order}
