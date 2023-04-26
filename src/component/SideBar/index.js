@@ -8,8 +8,10 @@ import {
 import { LogoImage } from "../../assests";
 import { RiHomeLine } from "react-icons/ri";
 import { FiShoppingCart } from "react-icons/fi";
-export default function SideBar({ selectedPage }) {
-  const [selected, setSelected] = useState("Dashboard");
+export default function SideBar({ selectedPage, currentPage }) {
+  const [selected, setSelected] = useState(
+    currentPage ? currentPage : "Dashboard"
+  );
   const SideBarItemsList = [
     { id: 1, title: "Dashboard", icon: <RiHomeLine size={18} /> },
     { id: 2, title: "Orders", icon: <FiShoppingCart size={18} /> },
